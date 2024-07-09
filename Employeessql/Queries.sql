@@ -9,7 +9,8 @@ FROM
 	employees e 
 	join "Salaries" s on e.emp_no = s.emp_no
 Order by
-	e.emp_no ASC;
+	e.emp_no ASC,
+    e.first_name ASC;
 
 
 
@@ -26,12 +27,11 @@ FROM
 WHERE
     e.hire_date BETWEEN '1986-01-01' AND '1986-12-31'
 ORDER BY
-    e.hire_date ASC;
+    e.hire_date ASC,
+    e.last_name ASC; 
 
 
-
---3) List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
-
+--3) List the manager of each department along with their department number, department name, employee number, last name, and first name.
 
 SELECT
     d.dept_no,
@@ -98,7 +98,6 @@ ORDER BY
 
 --7) List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
-
 SELECT
     e.emp_no,
     e.last_name,
@@ -126,7 +125,7 @@ FROM
 GROUP BY
     last_name
 ORDER BY
-    frequency DESC;
+    frequency ASC;
  
 
 
